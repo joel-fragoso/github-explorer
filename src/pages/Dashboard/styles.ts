@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 import { shade } from 'polished';
-
 import { FiChevronRight } from 'react-icons/fi';
 
 interface InputProps {
@@ -81,7 +81,7 @@ export const Repositories = styled.div`
   max-width: 700px;
 `;
 
-export const Repository = styled.a`
+export const Repository = styled(Link)`
   width: 100%;
 
   background-color: #fff;
