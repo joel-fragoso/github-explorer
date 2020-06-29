@@ -4,9 +4,9 @@ import React, {
   useEffect,
   FormEvent,
 } from 'react';
-import api from '../../services/api';
 
 import Logo from '../../assets/logo.svg';
+import api from '../../services/api';
 
 import {
   Brand,
@@ -96,7 +96,10 @@ const Dashboard: FunctionComponent = () => {
       {inputError && <Error>{inputError}</Error>}
       <Repositories>
         {repositories.map((repository) => (
-          <Repository key={repository.full_name} href="test">
+          <Repository
+            key={repository.full_name}
+            to={`/repository/${repository.full_name}`}
+          >
             <Content>
               <Avatar
                 src={repository.owner.avatar_url}
