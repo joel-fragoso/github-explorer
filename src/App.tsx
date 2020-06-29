@@ -1,7 +1,14 @@
-import React, { FC } from 'react';
+import React, { FunctionComponent } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-const App: FC = () => {
-  return <div className="App" />;
+import Routes from './routes';
+
+const App: FunctionComponent = () => {
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 };
 
 export default App;
