@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
 import { FiChevronRight } from 'react-icons/fi';
+
+interface InputProps {
+  hasError: boolean;
+}
 
 export const Brand = styled.img``;
 
@@ -22,15 +26,22 @@ export const Form = styled.form`
   display: flex;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<InputProps>`
   flex: 1;
 
   height: 70px;
 
   padding: 0 24px;
 
-  border: 0;
+  border: 2px solid #fff;
   border-radius: 5px 0 0 5px;
+
+  ${(props) =>
+    props.hasError &&
+    css`
+      border: 2px solid #c53030;
+      border-right: 0;
+    `}
 
   color: #3a3a3a;
 
@@ -56,6 +67,13 @@ export const Button = styled.button`
   &:hover {
     background-color: ${shade(0.2, '#04d361')};
   }
+`;
+
+export const Error = styled.span`
+  display: block;
+  color: #c53030;
+
+  margin-top: 8px;
 `;
 
 export const Repositories = styled.div`

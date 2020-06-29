@@ -9,6 +9,7 @@ import {
   Form,
   Input,
   Button,
+  Error,
   Repositories,
   Repository,
   Content,
@@ -29,6 +30,7 @@ interface Repository {
 }
 
 const Dashboard: FunctionComponent = () => {
+  const [inputError, setInputError] = useState('');
   const [newRepository, setNewRepository] = useState('');
   const [repositories, setRepositories] = useState<Repository[]>([]);
 
@@ -37,12 +39,22 @@ const Dashboard: FunctionComponent = () => {
   ): Promise<void> {
     event.preventDefault();
 
-    const response = await api.get<Repository>(`/repos/${newRepository}`);
+    if (!newRepository) {
+      setInputError('Digite o autor/nome do repositório');
+      return;
+    }
 
-    const repository = response.data;
+    try {
+      const response = await api.get<Repository>(`/repos/${newRepository}`);
 
-    setRepositories([...repositories, repository]);
-    setNewRepository('');
+      const repository = response.data;
+
+      setRepositories([...repositories, repository]);
+      setNewRepository('');
+      setInputError('');
+    } catch {
+      setInputError('Erro na busca por esse repositório');
+    }
   }
 
   return (
@@ -51,12 +63,14 @@ const Dashboard: FunctionComponent = () => {
       <Title>Explore repositórios no GitHub</Title>
       <Form onSubmit={handleAddRepository}>
         <Input
+          hasError={!!inputError}
           value={newRepository}
           onChange={(event) => setNewRepository(event.target.value)}
           placeholder="Digite o nome do repositório"
         />
         <Button type="submit">Pesquisar</Button>
       </Form>
+      {inputError && <Error>{inputError}</Error>}
       <Repositories>
         {repositories.map((repository) => (
           <Repository key={repository.full_name} href="test">
