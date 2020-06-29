@@ -1,7 +1,9 @@
 import React, { FunctionComponent } from 'react';
 
-const Dashboard: FunctionComponent = () => {
-  return <h1>Dashboard</h1>;
-};
+import { Title } from './styles';
+
+const Dashboard: FunctionComponent = () => (
+  <Title>Explore repositórios no GitHub</Title>
+);
 
 export default Dashboard;
