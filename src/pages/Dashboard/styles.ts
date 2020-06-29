@@ -105,6 +105,7 @@ export const Avatar = styled.img`
 
 export const Info = styled.div`
   margin-left: 16px;
+  margin-right: 16px;
 `;
 
 export const RepositoryName = styled.strong`
