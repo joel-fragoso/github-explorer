@@ -17,6 +17,7 @@
 <hr>
 <p align="center">
   <a href=#overview>Overview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href=#tecnologias>Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href=#como-usar>Como usar?</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href=#licença>Licença</a>
 </p>
@@ -24,10 +25,18 @@
 
 ## Overview
 
-<p align="center" style="display: flex; align-items: start; justify-content: space-between;">
-  <img width="49%" src="./assets/github-explorer-second.jpg" alt="GitHub Explorer Screen 1">
-  <img width="49%" src="./assets/github-explorer-third.jpg" alt="GitHub Explorer Screen 2">
+<p align="center">
+  <img width="49%" src="./assets/github-explorer-first.png" alt="GitHub Explorer Screen 1">
+  <img width="49%" src="./assets/github-explorer-second.png" alt="GitHub Explorer Screen 2">
 </p>
+
+## Tecnologias
+
+- [ReactJS](https://pt-br.reactjs.org/)
+- [React Router DOM](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Styled Components](https://styled-components.com/)
+- [Axios](https://github.com/axios/axios)
+- [Typescript](https://www.typescriptlang.org/)
 
 ## Como usar?
 
